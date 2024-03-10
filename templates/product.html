@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App Product</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: left;
+        }
+
+        header {
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center; 
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 0; 
+        }
+
+        h1, a {
+            color: rgb(107, 16, 16);
+            text-decoration: none;
+        }
+
+        nav {
+            margin-top: 20px;
+            text-align: center; 
+        }
+
+        section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Welcome to my Web page!</h2>
+    </header>
+
+    <nav>
+        <h1>List of Products</h1>
+        <h2><a href="{% url 'listproducts' %}">View Product List </a></h2>
+    </nav>
+
+    <section>
+        <h3>Product Details: </h3>
+        <p>Name: {{ name }}</p>
+        <p>Size: {{ size }}</p>
+        <p>Price: ${{ prize }}</p>
+        <p>Color: {{ color }}</p>
+    </section>
+</body>
+</html>

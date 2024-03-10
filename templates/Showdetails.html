@@ -1,0 +1,12 @@
+Hello {{fname}}<br>
+Gender  <br>
+{% if gender == "M" %}
+Male
+{% elif gender == "F" %}
+{{fname}}  is Female gender
+
+{% endif %}
+<br>
+num {% for x in num %}
+    {{ x }}
+    {% endfor %}
