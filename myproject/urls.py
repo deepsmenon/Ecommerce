@@ -28,5 +28,6 @@ urlpatterns = [
     
     path('', views.welcomescreen),
     path('Products/',include('products.urls')),
+    path("store/",include("store.urls")),
     
 ] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
