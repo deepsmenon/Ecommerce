@@ -26,7 +26,7 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     
-    path('', views.welcomescreen),
+    path('',views.welcomescreen),
     path('Products/',include('products.urls')),
     path("store/",include("store.urls")),
     
