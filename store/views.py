@@ -3,13 +3,13 @@ from store.models import Product
 from category.models import category  
 
 def store(request, category_url=None):
-    print('category_url : ', category_url)
+    
     categories = None  
     
     if category_url is not None:
-        print("printing category : ", category.category_name)
+       
         categories = get_object_or_404(category, slug=category_url)
-        print("printing products :::", categories)
+       
         products = Product.objects.filter(category=categories, is_available=True)
         product_count = products.count()
     else:
@@ -20,8 +20,17 @@ def store(request, category_url=None):
     context = {
         "products": products,
         "product_count": product_count,
-        "category_url": category_url,
-        "categories": categories,
+        
     }
     
     return render(request, "store.html", context)
+
+
+def product_detail(request,category_url,product_url):
+    single_product= Product.objects.get(category__slug=category_url,slug=product_url)
+    context = {
+        'single_product': single_product
+        
+    }
+    return render (request,"product_detail.html",context)
+    
